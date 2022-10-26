@@ -20,16 +20,9 @@ spec:
       labels:
         app: nsplease
     spec:
-      serviceAccountName: nsplease
       containers:
         - image: ghcr.io/socialgouv/nsplease:main
           name: nsplease
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: nsplease
-  namespace: nsplease-system
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -42,4 +35,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     namespace: nsplease-system
-    name: nsplease
+    name: default
