@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/SocialGouv/nsplease/compare/v1.0.3...v1.0.4) (2022-10-26)
+
+
+### Bug Fixes
+
+* use default ServiceAccount in nsplease-system ([9bd3d4b](https://github.com/SocialGouv/nsplease/commit/9bd3d4bed0fdd0e8ee8d87e267738b10ebb60943))
+
 ## [1.0.3](https://github.com/SocialGouv/nsplease/compare/v1.0.2...v1.0.3) (2022-10-26)
 
 
