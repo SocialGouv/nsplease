@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/SocialGouv/nsplease/compare/v1.0.0...v1.0.1) (2022-10-26)
+
+
+### Bug Fixes
+
+* empty commit ([811bade](https://github.com/SocialGouv/nsplease/commit/811badee8e61769af20a45903eecaa9497ae4056))
+
 # 1.0.0 (2022-10-26)
 
 
