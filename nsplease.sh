@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /usr/bin/env sh
 
 debug() {
   printf "[DEBUG]\t%s\n" "$*"
@@ -19,17 +19,16 @@ out() {
 }
 
 main() {
-  info "waiting for labelled namespaces..."
+  info "waiting for 'nsplease/project' labelled namespaces..."
   kubectl get namespace --watch --output-watch-events -o json |
     jq --unbuffered --raw-output \
-      'if .object.metadata.labels | has("nsplease/project") then
-        [.type, .object.metadata.name, .object.metadata.labels."nsplease/project"]
-          | select(.[0] == "ADDED")
-          | @tsv
-        else empty
-        end' |
-    while read -r TYPE NAME LABEL; do
-      debug "got event: $TYPE $NAME $LABEL"
+      'if (.object.metadata.labels | has("nsplease/project"))
+       and .type == "ADDED" then
+        [.object.metadata.name, .object.metadata.labels."nsplease/project"] | @tsv
+       else empty
+       end' |
+    while read -r NAME LABEL; do
+      debug "got labelled namespace: $NAME $LABEL"
     done
 }
 
