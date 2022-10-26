@@ -21,7 +21,7 @@ spec:
         app: nsplease
     spec:
       containers:
-        - image: ghcr.io/socialgouv/nsplease:main
+        - image: ghcr.io/socialgouv/nsplease:latest
           name: nsplease
 ---
 apiVersion: rbac.authorization.k8s.io/v1
