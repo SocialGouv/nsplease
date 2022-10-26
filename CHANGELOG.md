@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/SocialGouv/nsplease/compare/v1.0.1...v1.0.2) (2022-10-26)
+
+
+### Bug Fixes
+
+* add manual build ([7294e43](https://github.com/SocialGouv/nsplease/commit/7294e43b2def2a7f0d9752baa21ed721c7856e67))
+
 ## [1.0.1](https://github.com/SocialGouv/nsplease/compare/v1.0.0...v1.0.1) (2022-10-26)
 
 
