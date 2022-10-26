@@ -7,7 +7,7 @@ out() {
 }
 
 main() {
-  info "waiting for 'nsplease/project' labelled namespaces..."
+  echo "waiting for 'nsplease/project' labelled namespaces..."
   kubectl get namespace --watch --output-watch-events -o json |
     jq --unbuffered --raw-output \
       'if (.object.metadata.labels | has("nsplease/project"))
