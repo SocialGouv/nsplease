@@ -1,7 +1,7 @@
 FROM alpine:3.16
 
 RUN apk update && \
-    apk add curl jq
+    apk --no-cache add curl jq
 
 # Kubectl
 RUN curl -sL https://dl.k8s.io/release/v1.25.3/bin/linux/amd64/kubectl > /usr/local/bin/kubectl && \
