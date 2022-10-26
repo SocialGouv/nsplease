@@ -22,7 +22,7 @@ spec:
     spec:
       serviceAccountName: nsplease
       containers:
-        - image: ghcr.io/SocialGouv/nsplease
+        - image: ghcr.io/socialgouv/nsplease
           name: nsplease
 ---
 apiVersion: v1
