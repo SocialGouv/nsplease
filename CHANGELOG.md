@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/SocialGouv/nsplease/compare/v1.0.5...v1.0.6) (2022-10-26)
+
+
+### Bug Fixes
+
+* use latest image ([3e14640](https://github.com/SocialGouv/nsplease/commit/3e146401a4a440b56ecb95e588d18fccbbe09250))
+
 ## [1.0.5](https://github.com/SocialGouv/nsplease/compare/v1.0.4...v1.0.5) (2022-10-26)
 
 
