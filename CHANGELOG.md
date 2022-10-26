@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/SocialGouv/nsplease/compare/v1.0.6...v1.0.7) (2022-10-26)
+
+
+### Bug Fixes
+
+* remove info function ([00b5da6](https://github.com/SocialGouv/nsplease/commit/00b5da636b99805ef98b98342a490521ae32b9ac))
+
 ## [1.0.6](https://github.com/SocialGouv/nsplease/compare/v1.0.5...v1.0.6) (2022-10-26)
 
 
