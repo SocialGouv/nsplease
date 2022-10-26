@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/SocialGouv/nsplease/compare/v1.0.4...v1.0.5) (2022-10-26)
+
+
+### Bug Fixes
+
+* dummy ([49e2ba7](https://github.com/SocialGouv/nsplease/commit/49e2ba75e37dbe0c121e657404922af191ac7a4b))
+
 ## [1.0.4](https://github.com/SocialGouv/nsplease/compare/v1.0.3...v1.0.4) (2022-10-26)
 
 
