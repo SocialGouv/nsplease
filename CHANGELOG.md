@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/SocialGouv/nsplease/compare/v1.0.2...v1.0.3) (2022-10-26)
+
+
+### Bug Fixes
+
+* only consider ADDED events ([b78c1d1](https://github.com/SocialGouv/nsplease/commit/b78c1d18d87d9e5503c4106e27ebf0b986d44acb))
+
 ## [1.0.2](https://github.com/SocialGouv/nsplease/compare/v1.0.1...v1.0.2) (2022-10-26)
 
 
