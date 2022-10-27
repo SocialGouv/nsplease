@@ -1,5 +1,9 @@
 #! /usr/bin/env sh
 
+info() {
+  printf "[INFO]\t%s\n" "$*"
+}
+
 out() {
   "$@" | while read -r line; do
     printf "[EXEC]\t%s\n" "$line"
@@ -7,7 +11,7 @@ out() {
 }
 
 main() {
-  echo "waiting for 'nsplease/project' labelled namespaces..."
+  info "waiting for 'nsplease/project' labelled namespaces..."
 
   # watch namespace creations, only ADDED type and labelled with nsplease/project
   kubectl get namespace --watch --output-watch-events -o json |
@@ -18,7 +22,7 @@ main() {
        else empty
        end' |
     while read -r NAMESPACE PROJECT; do
-      echo "got labelled namespace: $NAMESPACE $PROJECT"
+      info "got labelled namespace: $NAMESPACE $PROJECT"
 
       # give rights on namespace to project's ServiceAccount
       out kubectl create clusterrolebinding "nsplease-crb-$PROJECT-$NAMESPACE" \
