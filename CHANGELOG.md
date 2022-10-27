@@ -1,3 +1,10 @@
+## [1.0.10](https://github.com/SocialGouv/nsplease/compare/v1.0.9...v1.0.10) (2022-10-27)
+
+
+### Bug Fixes
+
+* use namespaced Role and RoleBinding instead of ClusterRole ([a39479f](https://github.com/SocialGouv/nsplease/commit/a39479ff7b4e99151f84e6f03e8fa7e5363ca25a))
+
 ## [1.0.9](https://github.com/SocialGouv/nsplease/compare/v1.0.8...v1.0.9) (2022-10-27)
 
 
