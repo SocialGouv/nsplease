@@ -24,9 +24,16 @@ main() {
     while read -r NAMESPACE PROJECT; do
       info "got labelled namespace: $NAMESPACE $PROJECT"
 
+      # create privileged role in requested namespace
+      out kubectl create role nsplease-role \
+        --namespace="$NAMESPACE" \
+        --verb="*" \
+        --resource="*"
+
       # give rights on namespace to project's ServiceAccount
-      out kubectl create clusterrolebinding "nsplease-crb-$PROJECT-$NAMESPACE" \
-        --clusterrole=cluster-admin \
+      out kubectl create rolebinding "nsplease-rb-$PROJECT-$NAMESPACE" \
+        --namespace="$NAMESPACE" \
+        --role=nsplease-role \
         --serviceaccount="$PROJECT:nsplease-sa"
 
       # remove label to avoid doing this again for the same namespace
