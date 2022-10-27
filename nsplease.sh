@@ -11,18 +11,19 @@ out() {
 }
 
 main() {
-  info "waiting for 'nsplease/project' labelled namespaces..."
+  info "waiting for namespaces with label 'nsplease/done=false'..."
 
-  # watch namespace creations, only ADDED type and labelled with nsplease/project
+  # watch namespace creations, only ADDED type and labeled with nsplease/project
   kubectl get namespace --watch --output-watch-events -o json |
     jq --unbuffered --raw-output \
       'if (.object.metadata.labels | has("nsplease/project"))
-       and .type == "ADDED" then
+       and (.object.metadata.labels."nsplease/done" == "false")
+       and (.type == "ADDED") then
         [.object.metadata.name, .object.metadata.labels."nsplease/project"] | @tsv
        else empty
        end' |
     while read -r NAMESPACE PROJECT; do
-      info "got labelled namespace: $NAMESPACE $PROJECT"
+      info "got labeled namespace: $NAMESPACE $PROJECT"
 
       # create privileged role in requested namespace
       out kubectl create role nsplease-role \
@@ -37,7 +38,7 @@ main() {
         --serviceaccount="$PROJECT:nsplease-sa"
 
       # remove label to avoid doing this again for the same namespace
-      out kubectl label namespace "$NAMESPACE" nsplease/project-
+      out kubectl label namespace --overwrite "$NAMESPACE" nsplease/done=true
     done
 }
 
