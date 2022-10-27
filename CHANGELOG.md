@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/SocialGouv/nsplease/compare/v1.0.10...v1.0.11) (2022-10-27)
+
+
+### Bug Fixes
+
+* do not remove label ([fafc1e2](https://github.com/SocialGouv/nsplease/commit/fafc1e272010aae9a0083616e4a7b9ddae545696))
+
 ## [1.0.10](https://github.com/SocialGouv/nsplease/compare/v1.0.9...v1.0.10) (2022-10-27)
 
 
