@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/SocialGouv/nsplease/compare/v1.0.8...v1.0.9) (2022-10-27)
+
+
+### Bug Fixes
+
+* bring back [INFO] logs ([d9b0b91](https://github.com/SocialGouv/nsplease/commit/d9b0b91d070e1abe670bb5fe6bdc9cbe1b7cbb2c))
+
 ## [1.0.8](https://github.com/SocialGouv/nsplease/compare/v1.0.7...v1.0.8) (2022-10-26)
 
 
