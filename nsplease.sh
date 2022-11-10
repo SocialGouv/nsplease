@@ -1,4 +1,4 @@
-#! /usr/bin/env sh
+#!/usr/bin/env sh
 
 # config
 CREATE_SA="${CREATE_SA:-true}"
@@ -56,27 +56,6 @@ create_resources() { (
     --role="$NSPLEASE_ROLE_NAME" \
     --serviceaccount="$CI_NAMESPACE:$NSPLEASE_SERVICEACCOUNT_NAME"
 ); }
-
-# before : pas de label
-# after : label true
-
-# avoir les droits sur project-ci
-# factoriser convention ns ci
-
-# label ou annotation ?
-# label nsplease/project et annotation nsplease/done
-
-# CREATE_SA_IF_MISSING = true
-# NSPLEASE_SA_NAME
-# NSPLEASE_RB_NAME
-
-# ns de review : nsplease-sa get, watch, list sur son propre ns
-
-# créer nsplease-sa dans project-ci
-
-# on fail éviter de retry sans fin, retry qq fois
-# status en annotation pour l'action failed et s'arrêter
-# détecter quand quelqu'un veut retrigger une tentative en modifiant l'annotation
 
 main() {
   info "waiting for namespaces with label 'nsplease/done=false'..."
