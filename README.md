@@ -4,7 +4,7 @@
 
 Chaque projet a un Namespace de CI depuis lequel les pipelines de CI/CD sont exécutés.
 
-### Point d'entrée rbac (petite contextualisation)
+### Point d'entrée RBAC (petite contextualisation)
 
 En amont de `nsplease`, un `utilisateur` (ou un workflow) est membre d'un `projet`.
 
