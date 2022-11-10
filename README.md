@@ -5,24 +5,27 @@
 Chaque projet a un Namespace de CI depuis lequel les pipelines de CI/CD sont exécutés.
 
 ### Point d'entrée rbac (petite contextualisation)
+
 En amont de nsplease, un `utilisateur` (ou un workflow) est membre d'un `projet`.
 
-L'appartenance d'un `utilisateur` à un `projet` est garantis soit par `nsplease`, soit par rancher (soit les deux).
+L'appartenance d'un `utilisateur` à un `projet` est garantie soit par `nsplease`, soit par rancher (soit les deux).
 
-Lorsque cette appartenance est gérée par `nsplease`, cela est géré directement via les RBAC de kubernetes et un accès à un `namespace` initial détermine l'accès au `namespaces` suivants, depuis l'intérieur même de ce `namespace`. Appelons le `ci-namespace` pour plus de clareté.
+Lorsque cette appartenance est gérée par `nsplease`, cela est géré directement via les RBAC de kubernetes et un accès à un `namespace` initial détermine l'accès aux `namespaces` suivants, depuis l'intérieur même de ce `namespace`. Appelons-le `ci-namespace` pour plus de clareté.
 
 La convention de nommage du `ci-namespace` permet d'en déterminer l'accès par un `projet` auquel il correspond.
 
 L'accès initial au `ci-namespace` du projet est accordé par un service tiers de webhook (en l'occurence c'est le webhook de kontinuous).
 
-C'est le service de webhook qui garantis l'appartenance à un projet (via un token par exemple, c'est le cas pour celui de kontinuous) et qui autorise le déploiement d'un `pipeline` dans le `namespace` de CI.
+C'est le service de webhook qui garantit l'appartenance à un projet (via un token par exemple, c'est le cas pour celui de kontinuous) et qui autorise le déploiement d'un `pipeline` dans le `namespace` de CI.
 
-Le `pipeline` est un job kubernetes dont le manifest est prédéfini par le service de webhook, il hérite des droits accordé au `serviceaccount` présent dans le `namespace`.
+Le `pipeline` est un job kubernetes dont le manifest est prédéfini par le service de webhook, il hérite des droits accordés au `serviceaccount` présent dans le `namespace`.
 
 ### Namespace
-Les projets peuvent demander des namespaces où pourront être définits des ressources kubernetes, comprenant de deployments, jobs, statefullset, secret, configmaps etc...
+
+Les projets peuvent demander des namespaces où pourront être définis des ressources kubernetes, comprenant de deployments, jobs, statefulsets, secrets, configmaps etc.
 
 ### Namespace group
+
 Les namespaces peuvent partager leurs accès avec d'autres namespaces appartenants au même projet, en utilisant des `namespace-group`.
 
 Un Namespace de CI doit avoir tous les droits sur tous les Namespaces de son projet et sur lui-même.
@@ -36,6 +39,8 @@ Le `namespace-group` d'un Namespace est noté dessus grâce à un label.
 ## Specs
 
 ### Procédure de base
+
+### TODO : procédure pour NS seul et procédure pour NS-group
 
 Un Namespace `requested-ns` est créé avec le label `nsplease/namespace-group=project-1-deployment-1`.
 
