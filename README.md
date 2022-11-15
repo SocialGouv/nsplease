@@ -1,5 +1,15 @@
 # nsplease
 
+Service Kubernetes pour assigner dynamiquement des Namespaces à des projets par des droits RBAC.
+
+- [Principe](#principe)
+  - [Point d'entrée RBAC (petite contextualisation)](#point-dentrée-rbac-petite-contextualisation)
+  - [Namespace](#namespace)
+  - [Namespace group](#namespace-group)
+- [Demande d'un namespace seul](#demande-dun-namespace-seul)
+- [Demande d'un namespace dans un groupe](#demande-dun-namespace-dans-un-groupe)
+- [Échec de la procédure](#échec-de-la-procédure)
+
 ## Principe
 
 Chaque projet a un Namespace de CI depuis lequel les pipelines de CI/CD sont exécutés.
