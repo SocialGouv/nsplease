@@ -47,10 +47,10 @@ Opérations à effectuer :
 
 ## Demande d'un namespace dans un groupe
 
-Un Namespace `requested-ns` est créé avec les labels :
+Un Namespace `requested-ns` est créé avec les **labels** :
 
 - `nsplease/project=project-1`
-- `nsplease/project=group-1`
+- `nsplease/group=group-1`
 
 Opérations à effectuer :
 
@@ -60,8 +60,8 @@ Opérations à effectuer :
 
 ## Échec de la procédure
 
-Si une des deux procédures ci-dessus se déroule avec succès, ajouter une annotation `nsplease/state=done` sur `requested-ns`.
+Si une des deux procédures ci-dessus se déroule avec succès, ajouter une **annotation** `nsplease/state=done` sur `requested-ns`.
 
-Si une des actions de la liste échoue, réessayer l'opération complète plusieurs fois en temporisant. Si la procédure reste en échec, ajouter une annotation `nsplease/state=failed` et arrêter.
+Si une des actions de la liste échoue, réessayer l'opération complète plusieurs fois en temporisant. Si la procédure reste en échec, ajouter une **annotation** `nsplease/state=failed` et arrêter.
 
-Si un Namespace est modifié avec l'annotation `nsplease/state=retry`, la procédure complète est relancée.
+Si un Namespace est modifié avec l'**annotation** `nsplease/state=retry`, la procédure complète est relancée.
